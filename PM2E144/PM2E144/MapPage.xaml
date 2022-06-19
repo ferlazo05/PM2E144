@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="PM2E144.MapPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding descripcion}" x:Name="txtdescripcion" IsVisible="false"/>
+            <maps:Map x:Name="mapa" IsShowingUser="True"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Convertidor="clr-namespace:PM2E144.Convert"
+             x:Class="PM2E144.ViewSite">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Convertidor:ByteArrayToImage x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Eliminar sitio" x:Name="tbiEliminar"
+                     Order="Primary"
+                     Priority="0"
+                     Clicked="btneliminar_Clicked" />
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding id}" IsVisible="false" x:Name="txtid"/>
+            <Label Text="{Binding latitud}" IsVisible="false" x:Name="txtlatitud"/>
+            <Label Text="{Binding longitud}" IsVisible="false" x:Name="txtlongitud"/>
+            <Label Text="{Binding descripcion}" x:Name="txtdescripcion" TextColor="Black" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Image x:Name="imageSite" Source="{Binding foto, Converter={StaticResource ByteToImage}}" HeightRequest="400" WidthRequest="400"/>
+
+            <Button x:Name="btnmapa" Text="Ubicar en el mapa" Clicked="btnmapa_Clicked" Margin="10,0,10,0"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="btncompartirubi" Text="Compartir ubicacion" Clicked="btncompartirubi_Clicked" Margin="10,0,10,0" TextColor="Black"/>
+                <Button x:Name="btncompartirimg" Text="Compartir imagen" Clicked="btncompartirimg_Clicked" Margin="10,0,10,0" TextColor="Black"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
